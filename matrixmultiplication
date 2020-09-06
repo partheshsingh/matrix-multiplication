@@ -1,0 +1,106 @@
+import java.util.*;
+class matrixmultiplication
+{
+  public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the dimensions for your first array");
+        System.out.println("Enter the no. of rows");
+        rows = in.nextInt();
+        System.out.println("Enter the no. of columns");
+        columns = in.nextInt();
+        int[][] a = new int[rows][columns];
+
+
+        System.out.println("Enter the dimensions for your second array");
+        System.out.println("Enter the no. of rows");
+        rows2=in.nextInt();
+        System.out.println("Enter the no. of columns");
+        columns2=in.nextInt();
+        int[][] b;
+        b = new int[rows2][columns2];
+        
+        
+        if(Rows2==Columns)
+		{
+			System.out.println("Rows in the first array:"+Rows+"\nColumns in the first array:"+Columns);
+			System.out.println("Rows in the second array:"+Rows2+"\nColumns in the second array:"+Columns2);
+			System.out.println("Enter the Elements for the FIRST [1] array");
+			for(int x=0;x<rows;x++)//the rows
+			{
+				for(int y=0;y<columns;y++)//the columns
+				{//the setters of values
+					System.out.println("[1]Enter the element at place:"+x+" "+y);
+					array[x][y]=in.nextInt();
+				}
+			}
+			System.out.println("Enter the elements for the SECOND [2] array");
+			for(int x=0;x<rows2;x++)//the rows
+			{
+				for(int y=0;y<rolumns2;y++)//the columns
+				{//the setters of values
+					System.out.println("[2]Enter the element at place:"+x+" "+y);
+					array2[x][y]=in.nextInt();
+				}
+			}
+			System.out.print("\n"+"\n");
+//		System. out. print("\033[H\033[2J");
+			System.out.println("THE ELEMENTS OF THE FIRST ARRAY ARE:");
+			for(int x=0;x<rows;x++)
+			{
+				for(int y=0;y<columns;y++)
+				{
+					System.out.print(array[x][y]+" ");
+				}
+				System.out.println();
+			}
+
+			System.out.println("\n"+"\n");
+
+			System.out.println("THE ELEMENTS OF THE SECOND ARRAY ARE");
+			for(int x=0;x<rows2;x++)
+			{
+				for(int y=0;y<columns2;y++)
+				{
+					System.out.print(array2[x][y]+" ");
+				}
+				System.out.println();
+			}
+		/*
+		{1 2 3}*{1 2}
+		        {2 3}
+				{1 2}
+		={1*1+2*2+3*1  1*2+2*3+3*2}
+		={8 14}
+		 */
+			//multiply loop
+			int[][] multiple =new int[Rows][Columns2];
+			for(int x=0;x<rows;x++)
+			{
+				for(int y=0;y<columns2;y++)
+				{
+					for(int k=0;k<rows2;k++)
+					{
+						multiple[x][y] += array[x][k] * array2[k][y];
+					}
+				}
+			}
+
+			System.out.println("\n"+"\n");
+
+			for(int x=0;x<rows;x++)
+			{
+				for(int y=0;y<columns2;y++)
+				{
+					System.out.print(multiple[x][y]+" ");
+				}
+				System.out.println();
+			}
+		}
+		else
+		{
+			System.out.println("Bhai tero matrix galat hai pehle ka column dusre ke row se match karna jaruri hai,try again");
+			System.exit(0);
+		}
+    }
+}
